@@ -12,24 +12,24 @@ namespace Samlingar
       Raylib.InitWindow(800, 600, "hello");
       Raylib.SetTargetFPS(60);
 
-      List<Rectangle> enemies = new List<Rectangle>();
+      List<Rectangle> enemyList = new List<Rectangle>();
 
-      Rectangle e1 = new Rectangle(10, 10, 30, 30);
-      Rectangle e2 = new Rectangle(50, 50, 30, 30);
+      Rectangle enemyOne = new Rectangle(10, 10, 30, 30);
+      Rectangle enemyTwo = new Rectangle(50, 50, 30, 30);
 
-      enemies.Add(e1);
-      enemies.Add(e2);
+      enemyList.Add(enemyOne);
+      enemyList.Add(enemyTwo);
 
-      enemies.Add(new Rectangle(300, 200, 70, 70));
+      enemyList.Add(new Rectangle(300, 200, 70, 70));
 
       while (!Raylib.WindowShouldClose())
       {
 
-        for (int i = 0; i < enemies.Count; i++)
+        for (int i = 0; i < enemyList.Count; i++)
         {
-          Rectangle tmp = enemies[i];
+          Rectangle tmp = enemyList[i];
           tmp.x += 1;
-          enemies[i] = tmp;
+          enemyList[i] = tmp;
         }
 
         
@@ -46,7 +46,7 @@ namespace Samlingar
         }
 
 
-        DrawManyRects(enemies);
+        DrawManyRects(enemyList);
         
 
         Raylib.EndDrawing();
